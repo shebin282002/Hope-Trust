@@ -1,0 +1,22 @@
+{
+  "name": "ngo-website",
+  "version": "1.0.0",
+  "description": "Professional NGO website template",
+  "repository": {
+    "type": "git",
+    "url": "https://example.com/ngo-website"
+  },
+  "keywords": [
+    "NGO",
+    "nonprofit",
+    "charity",
+    "website",
+    "bootstrap"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://example.com/ngo-website/issues"
+  },
+  "homepage": "https://example.com/ngo-website#readme"
+}
