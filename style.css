@@ -166,9 +166,35 @@ body.dark-mode .qr-box {
     color: var(--soft-gold);
 }
 
+/* Language and Dark Mode Toggle Buttons - Golden Style */
 #darkModeToggle,
 #languageDropdown {
+    background-color: var(--soft-gold);
+    color: var(--navy-blue);
+    border: 2px solid var(--soft-gold);
     transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover,
+#languageDropdown:hover {
+    background-color: #b08f3f;
+    border-color: #b08f3f;
+    color: var(--navy-blue);
+}
+
+/* Dark Mode - Change only text and icon color */
+body.dark-mode #darkModeToggle,
+body.dark-mode #languageDropdown {
+    background-color: var(--soft-gold);
+    border-color: var(--soft-gold);
+    color: var(--navy-blue);
+}
+
+body.dark-mode #darkModeToggle:hover,
+body.dark-mode #languageDropdown:hover {
+    background-color: #b08f3f;
+    border-color: #b08f3f;
+    color: var(--navy-blue);
 }
 
 /* Navbar Controls Container */
@@ -1419,7 +1445,7 @@ footer {
     justify-content: center;
     font-size: 1.2rem;
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 999;
     box-shadow: 0 4px 15px rgba(201, 162, 77, 0.4);
 }
 
@@ -1431,6 +1457,13 @@ footer {
     background-color: var(--navy-blue);
     color: var(--soft-gold);
     transform: translateY(-5px);
+}
+
+/* Hide scroll button on desktop (only show on mobile) */
+@media (min-width: 769px) {
+    .scroll-top {
+        display: none !important;
+    }
 }
 
 /* ============================================
@@ -1834,37 +1867,62 @@ body.dark-mode .gateway-note p {
         width: 100%;
         text-align: left;
         padding: 12px 15px;
-        background-color: transparent;
+        background-color: var(--soft-gold);
         border: none;
-        color: var(--off-white);
+        color: var(--navy-blue);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 10px 0 5px 0;
+        border-radius: 6px;
+        font-weight: 500;
     }
     
     #languageDropdown:hover {
-        background-color: rgba(201, 162, 77, 0.1);
-        border-radius: 6px;
+        background-color: #b08f3f;
+        color: var(--navy-blue);
+    }
+    
+    /* Dark Mode - Language Dropdown */
+    body.dark-mode #languageDropdown {
+        background-color: var(--soft-gold);
+        color: var(--navy-blue);
+    }
+    
+    body.dark-mode #languageDropdown:hover {
+        background-color: #b08f3f;
+        color: var(--navy-blue);
     }
     
     #darkModeToggle {
         width: 100%;
         text-align: left;
         padding: 12px 15px;
-        background-color: transparent;
+        background-color: var(--soft-gold);
         border: none;
-        color: var(--off-white);
+        color: var(--navy-blue);
         display: flex;
         align-items: center;
         gap: 10px;
-        margin: 0;
+        margin: 5px 0 10px 0;
+        border-radius: 6px;
+        font-weight: 500;
     }
     
     #darkModeToggle:hover {
-        background-color: rgba(201, 162, 77, 0.1);
-        border-radius: 6px;
+        background-color: #b08f3f;
+        color: var(--navy-blue);
+    }
+    
+    /* Dark Mode - Dark Mode Toggle */
+    body.dark-mode #darkModeToggle {
+        background-color: var(--soft-gold);
+        color: var(--navy-blue);
+    }
+    
+    body.dark-mode #darkModeToggle:hover {
+        background-color: #b08f3f;
+        color: var(--navy-blue);
     }
     
     #darkModeToggle::after {
