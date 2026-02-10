@@ -166,6 +166,32 @@ body.dark-mode .qr-box {
     color: var(--soft-gold);
 }
 
+/* Navbar Controls Container */
+.navbar-collapse {
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar for navbar */
+.navbar-collapse::-webkit-scrollbar {
+    width: 6px;
+}
+
+.navbar-collapse::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.navbar-collapse::-webkit-scrollbar-thumb {
+    background: var(--soft-gold);
+    border-radius: 10px;
+}
+
+.navbar-collapse::-webkit-scrollbar-thumb:hover {
+    background: #b08f3f;
+}
+
 #darkModeToggle,
 #languageDropdown {
     transition: all 0.3s ease;
@@ -244,10 +270,19 @@ body.dark-mode .form-control {
     border-color: var(--border-color);
 }
 
+body.dark-mode .form-control::placeholder {
+    color: rgba(224, 224, 224, 0.5);
+    opacity: 1;
+}
+
 body.dark-mode .form-control:focus {
     background-color: var(--card-bg);
     color: var(--text-color);
     border-color: var(--soft-gold);
+}
+
+body.dark-mode .form-control:focus::placeholder {
+    color: rgba(224, 224, 224, 0.3);
 }
 
 body.dark-mode footer {
@@ -405,6 +440,10 @@ body.dark-mode .newsletter-form input {
     border-color: var(--border-color);
 }
 
+body.dark-mode .newsletter-form input::placeholder {
+    color: rgba(224, 224, 224, 0.5);
+}
+
 body.dark-mode .gallery-btn {
     background-color: var(--soft-gold);
     color: var(--navy-blue);
@@ -433,6 +472,11 @@ body.dark-mode a {
 
 body.dark-mode a:hover {
     color: var(--off-white);
+}
+
+body.dark-mode .contact-form {
+    background-color: rgba(26, 26, 26, 0.5);
+    border: 1px solid var(--border-color);
 }
 
 /* ============================================
@@ -1225,6 +1269,11 @@ section {
     transition: all 0.3s ease;
 }
 
+.form-control::placeholder {
+    color: rgba(46, 46, 46, 0.5);
+    opacity: 1;
+}
+
 .form-control:focus {
     border-color: var(--soft-gold);
     box-shadow: 0 0 0 0.2rem rgba(201, 162, 77, 0.25);
@@ -1734,6 +1783,27 @@ body.dark-mode .gateway-note p {
     
     .navbar-nav .nav-link {
         margin: 10px 0;
+        padding: 8px 15px;
+    }
+    
+    /* Mobile navbar controls alignment */
+    .navbar-collapse .nav-item.dropdown,
+    .navbar-collapse > .nav-item:last-child {
+        margin: 10px 0;
+    }
+    
+    #darkModeToggle,
+    #languageDropdown {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+    }
+    
+    .dropdown-menu {
+        width: 100%;
+        position: static !important;
+        transform: none !important;
+        margin-top: 5px;
     }
     
     .footer-title {
