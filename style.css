@@ -166,34 +166,13 @@ body.dark-mode .qr-box {
     color: var(--soft-gold);
 }
 
-/* Navbar Controls Container */
-.navbar-collapse {
-    max-height: 80vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-/* Custom scrollbar for navbar */
-.navbar-collapse::-webkit-scrollbar {
-    width: 6px;
-}
-
-.navbar-collapse::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-.navbar-collapse::-webkit-scrollbar-thumb {
-    background: var(--soft-gold);
-    border-radius: 10px;
-}
-
-.navbar-collapse::-webkit-scrollbar-thumb:hover {
-    background: #b08f3f;
-}
-
 #darkModeToggle,
 #languageDropdown {
+    transition: all 0.3s ease;
+}
+
+/* Navbar Controls Container */
+.navbar-collapse {
     transition: all 0.3s ease;
 }
 
@@ -1725,6 +1704,7 @@ body.dark-mode .gateway-note p {
         padding-top: 15px;
         gap: 10px;
     }
+    
     .hero-section {
         padding: 140px 20px 100px;
     }
@@ -1781,29 +1761,133 @@ body.dark-mode .gateway-note p {
         height: 250px;
     }
     
+    /* Mobile Navbar Improvements */
+    .navbar-collapse {
+        max-height: 70vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 15px 0;
+        margin-top: 10px;
+        background-color: var(--navy-blue);
+        border-radius: 8px;
+    }
+    
+    /* Dark Mode - Mobile Navbar Background */
+    body.dark-mode .navbar-collapse {
+        background-color: #0a0a0a;
+    }
+    
+    /* Custom scrollbar for mobile navbar */
+    .navbar-collapse::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    .navbar-collapse::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        margin: 5px 0;
+    }
+    
+    .navbar-collapse::-webkit-scrollbar-thumb {
+        background: var(--soft-gold);
+        border-radius: 10px;
+    }
+    
+    .navbar-collapse::-webkit-scrollbar-thumb:hover {
+        background: #b08f3f;
+    }
+    
+    .navbar-nav {
+        padding: 0 10px;
+    }
+    
     .navbar-nav .nav-link {
-        margin: 10px 0;
-        padding: 8px 15px;
+        margin: 0;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block;
     }
     
-    /* Mobile navbar controls alignment */
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        background-color: rgba(201, 162, 77, 0.1);
+        border-radius: 6px;
+    }
+    
+    /* Language and Dark Mode Controls - Remove Confusing Separators */
     .navbar-collapse .nav-item.dropdown,
-    .navbar-collapse > .nav-item:last-child {
-        margin: 10px 0;
+    .navbar-collapse .nav-item:has(#darkModeToggle) {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
     }
     
-    #darkModeToggle,
     #languageDropdown {
         width: 100%;
         text-align: left;
-        margin: 10px 0;
+        padding: 12px 15px;
+        background-color: transparent;
+        border: none;
+        color: var(--off-white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #languageDropdown:hover {
+        background-color: rgba(201, 162, 77, 0.1);
+        border-radius: 6px;
+    }
+    
+    #darkModeToggle {
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+        background-color: transparent;
+        border: none;
+        color: var(--off-white);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+    }
+    
+    #darkModeToggle:hover {
+        background-color: rgba(201, 162, 77, 0.1);
+        border-radius: 6px;
+    }
+    
+    #darkModeToggle::after {
+        content: 'Dark Mode';
+        font-size: 0.9rem;
+        margin-left: 5px;
+    }
+    
+    body.dark-mode #darkModeToggle::after {
+        content: 'Light Mode';
     }
     
     .dropdown-menu {
-        width: 100%;
+        width: calc(100% - 30px);
         position: static !important;
         transform: none !important;
-        margin-top: 5px;
+        margin: 5px 15px 10px 15px;
+        border-radius: 6px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .dropdown-menu .dropdown-item {
+        padding: 10px 15px;
     }
     
     .footer-title {
